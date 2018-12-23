@@ -5,16 +5,16 @@ class Counter extends Component {
     return (
       <React.Fragment>
         <h1>
-          {this.props.value}
+          {this.props.counter.value}
           <button
-            onClick={() => this.props.onClick(this.props.id)}
+            onClick={() => this.props.onClick(this.props.counter)}
             type="button"
             className="btn btn-success m-2"
           >
             +
           </button>
           <button
-            onClick={() => this.props.onDelete(this.props.id)}
+            onClick={() => this.props.onDelete(this.props.counter.id)}
             type="button"
             className="btn btn-danger m-2"
           >

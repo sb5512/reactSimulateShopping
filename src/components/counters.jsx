@@ -23,9 +23,11 @@ class Counters extends Component {
     console.log("Clicked Reset" + counters);
   };
 
-  handleClick = counterId => {
+  handleClick = counter => {
     const counters = [...this.state.counters];
-    counters[counterId - 1].value += 1;
+    const index = this.state.counters.indexOf(counter);
+    counters[index] = { ...counter };
+    counters[index].value++;
     this.setState({ counters });
   };
 
@@ -42,10 +44,9 @@ class Counters extends Component {
         {this.state.counters.map(counter => (
           <Counter
             key={counter.id}
-            value={counter.value}
+            counter={counter}
             onDelete={this.handleDelete}
             onClick={this.handleClick}
-            id={counter.id}
           />
         ))}
       </React.Fragment>
