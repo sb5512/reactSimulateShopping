@@ -1,20 +1,13 @@
 import React, { Component } from "react";
 
 class Counter extends Component {
-  state = { value: this.props.value };
-
-  handleClick = () => {
-    this.setState({ value: this.state.value + 1 });
-  };
-
   render() {
-    console.log(this.props);
     return (
       <React.Fragment>
         <h1>
-          {this.state.value}
+          {this.props.value}
           <button
-            onClick={() => this.handleClick()}
+            onClick={() => this.props.onClick(this.props.id)}
             type="button"
             className="btn btn-success m-2"
           >
